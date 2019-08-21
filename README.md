@@ -13,8 +13,8 @@ Kafka/distributed commit log service in Go.
 - Distribute a single binary
 - Use Serf for discovery, Raft for consensus (and remove the need to run ZooKeeper)
 - Smarter configuration settings
-    - Able to use percentages of disk space for retention policies rather than only bytes and time kept
-    - Handling size configs when you change the number of partitions or add topics
+  - Able to use percentages of disk space for retention policies rather than only bytes and time kept
+  - Handling size configs when you change the number of partitions or add topics
 - Learn a lot and have fun
 
 ## TODO
@@ -23,12 +23,12 @@ Kafka/distributed commit log service in Go.
 - [x] Fetching
 - [x] Partition consensus and distribution
 - [ ] Protocol
-    - [x] Produce
-    - [x] Fetch
-    - [x] Metadata
-    - [x] Create Topics
-    - [x] Delete Topics
-    - [ ] Consumer group [current task]
+  - [x] Produce
+  - [x] Fetch
+  - [x] Metadata
+  - [x] Create Topics
+  - [x] Delete Topics
+  - [ ] Consumer group [current task]
 - [x] Discovery
 - [ ] API versioning [more API versions to implement]
 - [ ] Replication [first draft done - testing heavily now]
@@ -61,23 +61,31 @@ Kafka/distributed commit log service in Go.
 
 1. Clone Jocko
 
-    ```
-    $ go get github.com/travisjeffery/jocko
-    ```
+   ```
+   $ go get github.com/travisjeffery/jocko
+   ```
 
 1. Build Jocko
 
-    ```
-    $ cd $GOPATH/src/github.com/travisjeffery/jocko
-    $ make build
-    ```
+   ```
+   $ cd $GOPATH/src/github.com/travisjeffery/jocko
+   $ make build
+   ```
 
-    (If you see an error about `dep` not being found, ensure that
-    `$GOPATH/bin` is in your `PATH`)
+   (If you see an error about `dep` not being found, ensure that
+   `$GOPATH/bin` is in your `PATH`)
 
 ### Docker
 
 `docker build -t travisjeffery/jocko:latest .`
+
+### For skipping docker build and pull from docker hub
+
+`docker pull livecontainer/jocko:latest`
+
+### Running 3 node Jocko Broker, download the docker-compose.yml
+
+`docker-compose up`
 
 ## Contributing
 
